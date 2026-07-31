@@ -17,6 +17,7 @@ export type State = {
   answer: number | null;
   points: number;
   highscore: number;
+  secondRemaining: number;
 };
 
 export type Action =
@@ -25,7 +26,9 @@ export type Action =
   | { type: "start" }
   | { type: "newAnswer"; payload: number }
   | { type: "nextQuestion" }
-  | { type: "finish" };
+  | { type: "finish" }
+  | { type: "restart" }
+  | { type: "tick" };
 
 export type AppDispatch = Dispatch<Action>;
 
