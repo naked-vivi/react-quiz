@@ -1,7 +1,13 @@
-import useQuiz from "../context/useQuiz";
+import type { AppDispatch } from "../type";
 
-function NextButton() {
-    const { dispatch, answer, index, numQuestions } = useQuiz();
+interface nextButtonProps {
+    dispatch: AppDispatch;
+    answer: number | null;
+    index: number;
+    numQuestions: number;
+}
+
+function NextButton({ dispatch, answer, index, numQuestions }: nextButtonProps) {
     if (answer === null) return null;
 
     if (index < numQuestions - 1)

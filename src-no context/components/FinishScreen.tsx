@@ -1,7 +1,13 @@
-import useQuiz from "../context/useQuiz";
+import type { AppDispatch } from "../type";
 
-function FinishScreen() {
-    const { dispatch, points, maxPossiblePoints, highscore } = useQuiz();
+interface finishScreenProps {
+    dispatch: AppDispatch;
+    points: number,
+    maxPossiblePoints: number,
+    highscore: number,
+}
+
+function FinishScreen({ dispatch, points, maxPossiblePoints, highscore }: finishScreenProps) {
     const percentage = (points / maxPossiblePoints) * 100
 
     let emoji;
